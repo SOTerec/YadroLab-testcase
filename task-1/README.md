@@ -8,7 +8,7 @@ docker run -it --privileged ubuntu:24.04
 
 __Тривиальные шаги с добавлением пользователя в первом задании будут пропущены__
 
-Внутри контейнера обновляем репо и делаем full-system-upgrade, после чего устанавливаем все необходимые пакеты:
+Внутри контейнера обновляем репозитории и делаем full-system-upgrade, после чего устанавливаем все необходимые пакеты:
 
 ```
 sudo apt update && sudo apt upgrade
@@ -16,13 +16,13 @@ sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential chrpat
 sudo locale-gen en_US.UTF-8
 ```
 
-Клонируем репо poky:
+Клонируем репозиторий `poky`:
 
 ```
 git clone git://git.yoctoproject.org/poky
 ```
 
-Переходим в директорию poky и переключаемся на нужную ветку:
+Переходим в директорию `poky` и переключаемся на нужную ветку:
 
 ```
 cd poky
@@ -30,7 +30,7 @@ git checkout kirkstone
 git pull
 ```
 
-Запускаем Build Environment Setup Script:
+Запускаем `Build Environment Setup Script`:
 
 ```
 source oe-init-build-env
@@ -48,3 +48,5 @@ bitbake core-image-minimal
 cd ~/poky/build/tmp/deploy/images/
 runqemu qemux86-64 slirp nographic
 ```
+Будет выведено приглашение:
+![runqemu qemux86-64](images/image_1.png)
