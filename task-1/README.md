@@ -2,9 +2,13 @@
 
 Задание будет выполнятся внутри Docker-контейнера:
 
-```docker run -it --privileged ubuntu:24.04```
+```
+docker run -it --privileged ubuntu:24.04
+```
 
-*** Тривиальные шаги с добавлением пользователя в первом задании будут пропущены ***
+***
+Тривиальные шаги с добавлением пользователя в первом задании будут пропущены
+***
 
 Внутри контейнера обновляем репо и делаем full-system-upgrade, после чего устанавливаем все необходимые пакеты:
 
@@ -16,7 +20,9 @@ sudo locale-gen en_US.UTF-8
 
 Клонируем репо poky:
 
-```git clone git://git.yoctoproject.org/poky```
+```
+git clone git://git.yoctoproject.org/poky
+```
 
 Переходим в директорию poky и переключаемся на нужную ветку:
 
@@ -28,11 +34,15 @@ git pull
 
 Запускаем Build Environment Setup Script:
 
-```source oe-init-build-env```
+```
+source oe-init-build-env
+```
 
 Теперь из каталога `build` запускаем сборку `poky core-image-minimal`:
 
-```bitbake core-image-minimal```
+```
+bitbake core-image-minimal
+```
 
 После успешной сборки можно перейти в директорию с образом и запустить его:
 
