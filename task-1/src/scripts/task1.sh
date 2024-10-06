@@ -13,6 +13,6 @@ source oe-init-build-env
 
 bitbake core-image-minimal
 
-cd ~/poky/build/tmp/deploy/images/
+cd ../../poky/build/tmp/deploy/images/
 
 runqemu qemux86-64 slirp nographic
