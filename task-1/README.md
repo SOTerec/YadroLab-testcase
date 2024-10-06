@@ -1,4 +1,4 @@
-## Задание 1.
+## Задание 1
 
 Задание будет выполнятся внутри Docker-контейнера:
 
@@ -49,4 +49,6 @@ cd ~/poky/build/tmp/deploy/images/
 runqemu qemux86-64 slirp nographic
 ```
 Будет выведено приглашение:
-![runqemu qemux86-64](images/image_1.png)
+![runqemu qemux86-64](src/images/image_1.png)
+
+Все вышеприведенные шаги можно выполнить с помощью запуска [данного скрипта](src/scripts/task1.sh)
