@@ -1,14 +1,14 @@
 #!/bin/bash
-chown -R 1000:1000 /home/user/images
-
 cd images
 
-git clone git://git.yoctoproject.org/poky -b kirkstone
+# git clone git://git.yoctoproject.org/poky -b kirkstone
 
 cd poky
 
-source oe-init-build-env
+. ./oe-init-build-env test-builds
 
 bitbake core-image-minimal
+
+env
 
 exec "$@"
