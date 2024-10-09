@@ -2,7 +2,7 @@
 
 __Задание выполняется в Rootless Mode Docker__
 
-Используемый [Dockerfile](geploy/Dockerfile):
+Используемый [Dockerfile](deploy/Dockerfile):
 
 ```
 FROM ubuntu:20.04
@@ -74,9 +74,9 @@ docker build -t <image_name>:<image_version> .
 docker run --privileged -itv <volume_name>:/home/user/images -e TARGET=<target> --name=<container_name> <image_name>:<image_version> 
 ```
 
-В качестве `TARGET` можно передать 'build' если нужно выболнить сборку 'poky' или 'run' если нужно выполнить запуск собранного образа
+В качестве `TARGET` можно передать `build` если нужно выполнить сборку `poky` или `run` если нужно выполнить запуск собранного образа
 
-Собранный образ хранится в `.local/share/docker/volumes/`
+Собранный образ хранится в `~/.local/share/docker/volumes/`
 
 Скрипт сборки [build.sh](deploy/scripts/build.sh):
 
@@ -115,11 +115,9 @@ exec "$@"
 ```
 docker build -t test:v1 .
 
-
 docker run --privileged -itv images:/home/user/images -e TARGET=build --name=yocto test:v1
-
 
 docker run --privileged -itv images:/home/user/images -e TARGET=run --name=yocto test:v1
 ```
 
-![proof.img](src/images/image_1.png)
+![proof.img](images/image_1.png)
