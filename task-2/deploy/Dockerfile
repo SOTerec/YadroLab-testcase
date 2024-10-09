@@ -40,8 +40,7 @@ RUN mkdir /home/user && \
     usermod -aG sudo user && \
     chown -R 1000:1000 /home/user && \
     chown -R 1000:1000 /home/user/images && \
-    echo "user:changeme" | chpasswd && \
-    echo "root:changeme" | chpasswd
+    echo "user:changeme" | chpasswd
 
 ENTRYPOINT bash "$TARGET.sh" \
            /bin/bash 
