@@ -9,7 +9,7 @@ git clone git://git.yoctoproject.org/poky -b kirkstone
 
 cd poky
 
-source oe-init-build-env
+. ./oe-init-build-env
 
 bitbake core-image-minimal
 
