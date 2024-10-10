@@ -3,7 +3,7 @@
 Задание будет выполнятся внутри Docker-контейнера:
 
 ```
-docker run -it --privileged ubuntu:24.04
+docker run -it ubuntu:20.04
 ```
 
 __Тривиальные шаги с добавлением пользователя в первом задании будут пропущены__
@@ -48,7 +48,10 @@ bitbake core-image-minimal
 cd ~/poky/build/tmp/deploy/images/
 runqemu qemux86-64 slirp nographic
 ```
+
 Будет выведено приглашение:
 ![runqemu qemux86-64](src/images/image_1.png)
 
 Все вышеприведенные шаги можно выполнить с помощью запуска [данного скрипта](src/scripts/task1.sh)
+
+Может понадобиться использование [`--privileged`](https://docs.docker.com/reference/cli/docker/container/run/#privileged) при запуске контейнера, в случае возникновения проблем с гипервизором
