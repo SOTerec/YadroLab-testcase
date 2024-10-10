@@ -62,6 +62,12 @@ WORKDIR /home/user
 USER user
 ```
 
+Перед сборкой образа необходимо перейти в директорию `deploy`:
+
+```
+cd deploy
+```
+
 Образ контейнера собирается командой:
 
 ```
@@ -71,7 +77,7 @@ docker build -t <image_name>:<image_version> .
 Собранный контейнер можно запустить командой:
 
 ```
-docker run --privileged -itv <volume_name>:/home/user/images -e TARGET=<target> --name=<container_name> <image_name>:<image_version> 
+docker run -itv <volume_name>:/home/user/images -e TARGET=<target> --name=<container_name> <image_name>:<image_version> 
 ```
 
 В качестве `TARGET` можно передать `build` если нужно выполнить сборку `poky` или `run` если нужно выполнить запуск собранного образа
@@ -113,11 +119,15 @@ exec "$@"
 После успешной сборки и запуска получим:
 
 ```
+cd deploy
+
 docker build -t test:v1 .
 
-docker run --privileged -itv images:/home/user/images -e TARGET=build --name=yocto test:v1
+docker run -itv images:/home/user/images -e TARGET=build --name=yocto_build test:v1
 
-docker run --privileged -itv images:/home/user/images -e TARGET=run --name=yocto test:v1
+docker run -itv images:/home/user/images -e TARGET=run --name=yocto_run test:v1
 ```
 
 ![proof.img](images/image_1.png)
+
+Может понадобиться использование [`--privileged`](https://docs.docker.com/reference/cli/docker/container/run/#privileged) при запуске контейнера, в случае возникновения проблем с гипервизором
