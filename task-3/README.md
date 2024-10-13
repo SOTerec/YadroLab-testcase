@@ -163,7 +163,7 @@ bitbake core-image-minimal
 exec "$@"
 ```
 
-После успешной сборки, запуска и добавления новго слоя получим:
+После успешной сборки, запуска и добавления нового слоя получим:
 
 ```
 cd deploy
@@ -171,6 +171,7 @@ cd deploy
 docker build -t test:v1 .
 
 docker run -itv images:/home/user/images -e TARGET=build --name=yocto_build test:v1
+
 docker run -itv images:/home/user/images -e TARGET=add-layer --name=yocto_add_layer test:v1
 
 docker run -itv images:/home/user/images -e TARGET=run --name=yocto_run test:v1
