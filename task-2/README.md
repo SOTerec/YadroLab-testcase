@@ -101,7 +101,7 @@ bitbake core-image-minimal
 exec "$@"
 ```
 
-Скрипт запуска [run.sh](deploy/scripts/run.sh)
+Скрипт запуска [run.sh](deploy/scripts/run.sh):
 
 ```
 #!/bin/bash
