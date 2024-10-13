@@ -107,7 +107,7 @@ exec "$@"
 #!/bin/bash
 cd images/poky
 
-. ./oe-init-build-env
+. ./oe-init-build-env test-builds
 
 cd /home/user/images/poky/test-builds/tmp/deploy/images/
 
