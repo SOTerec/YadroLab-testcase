@@ -179,5 +179,17 @@ docker run -itv images:/home/user/images -e TARGET=run --name=yocto_run test:v1
 
 ![proof.img](images/image_1.png)
 
+Исходный код [`yadro_hello`](deploy/src/yadro_hello.c):
+
+```
+#include "stdio.h"
+
+int main()
+{
+  printf("%s\n", "Hello from my own program!");
+  return 0;
+}
+```
+
 Может понадобиться использование [`--privileged`](https://docs.docker.com/reference/cli/docker/container/run/#privileged) при запуске контейнера, в случае возникновения проблем с гипервизором
 
